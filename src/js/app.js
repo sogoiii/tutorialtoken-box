@@ -87,7 +87,7 @@ App = {
 
         return tutorialTokenInstance.balanceOf(account);
       }).then(function(result) {
-        balance = result.c[0];
+        balance = web3.fromWei(result, 'ether').toString();
 
         $('#TTBalance').text(balance);
       }).catch(function(err) {
